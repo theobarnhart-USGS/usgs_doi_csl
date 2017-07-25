@@ -214,7 +214,7 @@
                 <text variable="DOI" prefix="doi:"/>
               </if>
               <else-if match="any" variable="URL">
-                <text variable="URL"/>
+                <text variable="URL" prefix="Available at: "/>
               </else-if>
               <else/>
             </choose>
