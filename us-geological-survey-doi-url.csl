@@ -211,7 +211,7 @@
             <text variable="page" prefix="p. "/>
             <choose>
               <if match="any" variable="DOI">
-                <text variable="DOI" prefix="doi:"/>
+                <text variable="DOI" prefix="doi: "/>
               </if>
               <else-if match="any" variable="URL">
                 <text variable="URL" prefix="Available at: "/>
