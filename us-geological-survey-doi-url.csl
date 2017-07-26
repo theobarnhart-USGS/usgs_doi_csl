@@ -63,7 +63,7 @@
   <macro name="link">
     <choose>
       <if match="any" variable="DOI">
-        <text variable="DOI" prefix="DOI: "/>
+        <text variable="DOI" prefix="doi: "/>
       </if>
       <else-if match="any" variable="URL">
         <text variable="URL" prefix="available at: "/>
