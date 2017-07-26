@@ -21,7 +21,7 @@
     </contributor>
     <category citation-format="author-date"/>
     <category field="geology"/>
-    <updated>2017-07-26T17:47:16+00:00</updated>
+    <updated>2017-07-26T17:55:36+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <macro name="editor-translator">
@@ -59,6 +59,16 @@
       <text variable="publisher"/>
       <text variable="publisher-place"/>
     </group>
+  </macro>
+  <macro name="link">
+    <choose>
+      <if match="any" variable="DOI">
+        <text variable="DOI" prefix="DOI: "/>
+      </if>
+      <else-if match="any" variable="URL">
+        <text variable="URL" prefix="available at: "/>
+      </else-if>
+    </choose>
   </macro>
   <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="false" disambiguate-add-givenname="false">
     <sort>
@@ -130,8 +140,8 @@
             <group prefix=" " delimiter=" ">
               <text term="version"/>
               <text variable="version"/>
+              <text macro="link"/>
             </group>
-            <text variable="URL" prefix="available at: "/>
           </group>
         </else-if>
         <else-if type="bill book graphic legal_case legislation motion_picture song" match="any">
@@ -143,14 +153,7 @@
             <text variable="collection-title"/>
             <text macro="publisher"/>
             <text variable="number-of-pages" suffix=" p."/>
-            <choose>
-              <if match="any" variable="DOI">
-                <text variable="DOI" prefix="DOI: "/>
-              </if>
-              <else-if match="any" variable="URL">
-                <text variable="URL" prefix="available at: "/>
-              </else-if>
-            </choose>
+            <text macro="link"/>
           </group>
         </else-if>
         <else-if type="webpage">
@@ -191,14 +194,7 @@
               <text macro="publisher" prefix=" "/>
               <group prefix=", ">
                 <text variable="page" prefix="p. "/>
-                <choose>
-                  <if match="any" variable="DOI">
-                    <text variable="DOI" prefix="DOI: "/>
-                  </if>
-                  <else-if match="any" variable="URL">
-                    <text variable="URL" prefix="available at: "/>
-                  </else-if>
-                </choose>
+                <text macro="link"/>
               </group>
             </group>
           </group>
@@ -206,14 +202,7 @@
         <else-if type="map">
           <text variable="title" prefix=" "/>
           <text variable="collection-title" prefix=": "/>
-          <choose>
-            <if match="any" variable="DOI">
-              <text variable="DOI" prefix="DOI: "/>
-            </if>
-            <else-if match="any" variable="URL">
-              <text variable="URL" prefix="available at: "/>
-            </else-if>
-          </choose>
+          <text macro="link"/>
           <text variable="note" prefix=", scale "/>
         </else-if>
         <else-if type="speech">
@@ -233,15 +222,7 @@
               <text variable="issue" prefix="no. "/>
             </group>
             <text variable="page" prefix="p. "/>
-            <choose>
-              <if match="any" variable="DOI">
-                <text variable="DOI" prefix="DOI: "/>
-              </if>
-              <else-if match="any" variable="URL">
-                <text variable="URL" prefix="available at: "/>
-              </else-if>
-              <else/>
-            </choose>
+            <text macro="link"/>
           </group>
         </else>
       </choose>
