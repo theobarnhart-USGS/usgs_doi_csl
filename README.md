@@ -23,3 +23,8 @@ Senay, G.B., Bohms, S., Singh, R.K., Gowda, P.H., Velpuri, N.M., Alemu, H., and 
     * This should open the file in the tab and provide the path to the file in the browser bar
 1. Copy the file path into the Mendeley download style field and click download
 1. The new style should now be available
+
+## To do
+
+* Bring format into compliance with USGS Publishing Standards Memorandum No. 2014.03
+* Convince USGS to use AGU format...
